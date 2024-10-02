@@ -50,22 +50,31 @@
         ->      ensure cmake is installed
 
     3. create CMakeLists.txt file
-        - central configuration file 
-        
-        - CMake Presets / Kits and Variants
-        - preset for windows / mac / linux
 
 
-    cmake . && make && ./hello
-    cmake .
-    mingw32-make
+    4. make a build directory to avoid cluster
+    mkdir build
+    cd build
+    cmake ..            -> generates files to build
 
-    cmake -G "MinGW Makefiles" .
+    5. sln ac / build
+    startup projesi sec
+    - alternatif
+    cmake --build . --config Release
 
-    cmake .. -G
 
-    cmake -G "Visual Studio 17 2022" -A x64 ..
-    cmake -S .. -B build -G "MinGW Makefiles" -DCMAKE_C_COMPILER="C:\MinGW\bin\gcc.exe" -DCMAKE_CXX_COMPILER="C:/Path/To/MinGW/bin/g++.exe"
+- central configuration file 
+- CMake Presets / Kits and Variants
+- preset for windows / mac / linux
+- cmake . && make && ./hello
+- cmake .
+- mingw32-make
+- cmake -G "MinGW Makefiles" .
+
+- cmake .. -G
+
+- cmake -G "Visual Studio 17 2022" -A x64 ..
+- cmake -S .. -B build -G "MinGW Makefiles" -DCMAKE_C_COMPILER="C:\MinGW\bin\gcc.exe" -DCMAKE_CXX_COMPILER="C:/Path/To/MinGW/bin/g++.exe"
 
 
 # How to
