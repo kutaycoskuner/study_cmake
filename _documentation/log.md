@@ -45,6 +45,9 @@
 # Log 
 - [todo]
 
+- [0.13] script for binaries and build
+    - 03-Oct-2024 script for binaries and build
+
 - [0.12] script testing
     - 02-Oct-2024 script testing
 

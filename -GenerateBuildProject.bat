@@ -35,6 +35,16 @@ if !errorlevel! NEQ 0 (
 :: Check if submodule is initialized to avoid CMake file not found errors
 call :CheckAndInitializeSubmodules
 
+
+:: clean the existing files in build for clean
+echo.
+echo clean setup initialization
+if exist !SOLUTION_DIRECTORY! (
+    rmdir /s /q !SOLUTION_DIRECTORY!
+    echo .
+    echo removed existing build directory 
+)
+
 :: Generate build directory
 if not exist !SOLUTION_DIRECTORY! (
     echo [] Creating directory !SOLUTION_DIRECTORY!...
@@ -43,6 +53,7 @@ if not exist !SOLUTION_DIRECTORY! (
 
 :: TODO Run cmake
 cd !SOLUTION_DIRECTORY!
+
 
 echo.
 echo generataing solution files.
@@ -64,9 +75,10 @@ if !errorlevel! EQU 0 (
 )
 
 :: generate binaries
-cd ..
-call -GenerateBinaries.bat
+call ../-GenerateBinaries.bat
 
+
+cd ..
 
 exit /b 0
 
