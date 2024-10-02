@@ -35,6 +35,13 @@ set(CMAKE_GENERATOR_PLATFORM ${InstructionSetArchitecture})
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# set startup project to project other than cmake builds
+# https://cmake.org/cmake/help/latest/command/set_property.html
+set_property(
+    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} 
+    PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME}
+)
+
 
 # Check if CMAKE_BUILD_TYPE is not set
 # if(NOT CMAKE_BUILD_TYPE)

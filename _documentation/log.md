@@ -44,6 +44,13 @@
 
 # Log 
 - [todo]
+    - add library to cmake
+    - add multiple source files
+    - headerlar klasorler icerisinde ise onlar icin ayri set
+
+- [0.14] call generate binaries alone
+    - 03-Oct-2024 set solution startup file 
+    - 03-Oct-2024 call generate biaries alone
 
 - [0.13] script for binaries and build
     - 03-Oct-2024 script for binaries and build

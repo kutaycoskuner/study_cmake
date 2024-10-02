@@ -6,7 +6,7 @@ setlocal enabledelayedexpansion
 :: In a batch file, by default, variables are evaluated at the time a line of code is parsed, not when the code is executed. This can cause issues in loops or conditionals where the value of a variable may change during execution, but the batch interpreter doesn't recognize the updated value because it uses the initial value from the time the line was parsed.
 
 :: ---------------------------------------------------------------------------------------
-::              global contants
+::              variables
 :: ---------------------------------------------------------------------------------------
 set LAUNCH_VS=1
 set SOLUTION_DIRECTORY=build
@@ -16,7 +16,7 @@ set SOLUTION_DIRECTORY=build
 
 
 :: ---------------------------------------------------------------------------------------
-::              main
+::              check if cmake is installed
 :: ---------------------------------------------------------------------------------------
 echo.
 :: echo. -> new line
@@ -36,7 +36,9 @@ if !errorlevel! NEQ 0 (
 call :CheckAndInitializeSubmodules
 
 
-:: clean the existing files in build for clean
+:: ---------------------------------------------------------------------------------------
+::              clean install if if build already exists
+:: ---------------------------------------------------------------------------------------
 echo.
 echo clean setup initialization
 if exist !SOLUTION_DIRECTORY! (
@@ -55,6 +57,10 @@ if not exist !SOLUTION_DIRECTORY! (
 cd !SOLUTION_DIRECTORY!
 
 
+
+:: ---------------------------------------------------------------------------------------
+::              generate solution folders in build/
+:: ---------------------------------------------------------------------------------------
 echo.
 echo generataing solution files.
 
@@ -71,11 +77,21 @@ if !errorlevel! EQU 0 (
     echo.
     echo [] Error with CMake. No solution files generated.
     echo. 
-    pause
+    exit /b -1
 )
 
-:: generate binaries
-call ../-GenerateBinaries.bat
+:: ---------------------------------------------------------------------------------------
+::              generate binaries
+:: ---------------------------------------------------------------------------------------
+call ../-GenerateBinaries.bat !SOLUTION_DIRECTORY!
+if !errorlevel! EQU 0 (
+    echo.
+    echo binaries successfully built
+) else (
+    echo.
+    echo encountered problem on building binaries
+    exit /b -1
+)
 
 
 cd ..
