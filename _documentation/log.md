@@ -45,6 +45,9 @@
 # Log 
 - [todo]
 
+- [0.11] reset cmakelists to minimal
+    - 02-Oct-2024 reset cmakelsits
+
 - [0.10] create template repository
     - 02-Oct-2024 add template repository
 
