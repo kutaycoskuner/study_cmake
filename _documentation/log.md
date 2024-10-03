@@ -45,8 +45,12 @@
 # Log 
 - [todo]
     - add library to cmake
-    - add multiple source files
     - headerlar klasorler icerisinde ise onlar icin ayri set
+
+- [0.15] add includes, multiple source files, readme update
+    - 03-Oct-2024 add readme install
+    - 03-Oct-2024 add multiple source files
+    - 03-Oct-2024 add include
 
 - [0.14] call generate binaries alone
     - 03-Oct-2024 set solution startup file 

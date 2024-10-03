@@ -1,68 +1,49 @@
-# required: set required cmake version
+# Set required CMake version
 cmake_minimum_required(VERSION 3.24)
-# required: set the project name
+
+# Set the project name
 project(tutorial)
 
 # ----------------------------------------------------------------------------------------
-#               testing simple output
+#               Standards and Configurations
 # ----------------------------------------------------------------------------------------
-# where cmakelists.txt lives
-# message(FATAL_ERROR "This is a test  ${CMAKE_SOURCE_DIR}")
 
-# where cmakelists.txt lives?
-# message(FATAL_ERROR "This is a test2  ${CMAKE_CURRENT_SOURCE_DIR}")
-# message(STATUS "testing ${CMAKE_BUILD_TYPE}")
-# message(STATUS "${OSBitness}")
-# message(FATAL_ERROR "This is a test3  ${CMAKE_HOME_SOURCE_DIR}") 
-
-
-# ----------------------------------------------------------------------------------------
-#               standards
-# ----------------------------------------------------------------------------------------
-# include(CTest) # -> testing tool included in cmake
-# enable_testing()
-
-# determine (32 / 64)
-# set(InstructionSetArchitecture 32)
-# if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-#     set(InstructionSetArchitecture 64)
-# endif()
-set(InstructionSetArchitecture x64)
-set(CMAKE_GENERATOR_PLATFORM ${InstructionSetArchitecture})
-
-
-# optional: define which cpp standard you want to use
+# Optional: Define the C++ standard you want to use
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# set startup project to project other than cmake builds
-# https://cmake.org/cmake/help/latest/command/set_property.html
+# Set the architecture
+set(InstructionSetArchitecture x64)
+set(CMAKE_GENERATOR_PLATFORM ${InstructionSetArchitecture})
+
+# Set startup project to project other than CMake builds (for Visual Studio)
 set_property(
-    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} 
+    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME}
 )
 
-
-# Check if CMAKE_BUILD_TYPE is not set
+# Set default build type if not specified (optional)
 # if(NOT CMAKE_BUILD_TYPE)
 #     message(STATUS "CMAKE_BUILD_TYPE not specified. Setting default to 'Release'.")
 #     set(CMAKE_BUILD_TYPE "Release")
 # endif()
 
 # ----------------------------------------------------------------------------------------
-#               variable for source code
+#               Source Code and Output Directories
 # ----------------------------------------------------------------------------------------
+
+# Define the source code files
 set(sourceCode
-    "main.cpp"
+    "source/main.cpp"
+    "source/my_functions.cpp"  # Add the additional source file here
 )
 
+# Define the output directory based on system name, architecture, and build type
 set(outputDir 
     "${CMAKE_SOURCE_DIR}/bin/${CMAKE_SYSTEM_NAME}/${InstructionSetArchitecture}/${CMAKE_BUILD_TYPE}"    
 )
 
-# ----------------------------------------------------------------------------------------
-#               variable for source code
-# ----------------------------------------------------------------------------------------
+# Specify where to output archive (static libs), libraries, and executables
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY
     "${outputDir}/static_libs"
 )
@@ -75,6 +56,12 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY
     "${outputDir}"
 )
 
+# ----------------------------------------------------------------------------------------
+#               Include Directories and Executable
+# ----------------------------------------------------------------------------------------
 
-# add the executable (executable called first param, using the second param as source)
+# Add the headers directory so the compiler can find header files
+include_directories("${CMAKE_SOURCE_DIR}/headers")
+
+# Add the executable, linking the project name with the source files
 add_executable(${PROJECT_NAME} ${sourceCode})

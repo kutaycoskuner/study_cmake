@@ -14,6 +14,14 @@
 # Keywords
 
 # Structure
+root/
+│
+├── CMakeLists.txt
+├── source/
+│   ├── main.cpp
+│   └── my_functions.cpp
+├── headers/
+    └── my_functions.h
 
 # Blackboard
 - <what is build system>
