@@ -31,7 +31,6 @@ set_property(
 # ----------------------------------------------------------------------------------------
 #               Source Code and Output Directories
 # ----------------------------------------------------------------------------------------
-
 # Define the source code files
 set(sourceCode
     "source/main.cpp"
@@ -56,12 +55,29 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY
     "${outputDir}"
 )
 
+
+# ----------------------------------------------------------------------------------------
+#               Adding Libraries
+# ----------------------------------------------------------------------------------------
+include_directories("${CMAKE_SOURCE_DIR}/libs/header_hello_1.0.0")
+add_library( # MODULE, STATIC, SHARED (DYNAMIC)
+    "hello" STATIC
+    "libs/header_hello_1.0.0/hello.cpp"
+)
+
+
 # ----------------------------------------------------------------------------------------
 #               Include Directories and Executable
 # ----------------------------------------------------------------------------------------
-
 # Add the headers directory so the compiler can find header files
 include_directories("${CMAKE_SOURCE_DIR}/headers")
 
 # Add the executable, linking the project name with the source files
 add_executable(${PROJECT_NAME} ${sourceCode})
+
+
+# ----------------------------------------------------------------------------------------
+#               Linking Libraries
+# ----------------------------------------------------------------------------------------
+# linking library should come after generation of executable?
+target_link_libraries(${PROJECT_NAME} PRIVATE hello)

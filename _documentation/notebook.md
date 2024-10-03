@@ -24,6 +24,25 @@ root/
     └── my_functions.h
 
 # Blackboard
+- <libraries>
+    - static 
+    - dynamic (shared)
+    - header only
+    - precompiled
+    - obj libs
+    - frameworks
+    - plugin libs
+    - runtime libs
+
+    - sub modules
+
+    - structure
+        - naming convention <type>_<name-stuff>_<version.subversion>
+                            assimp-5.2.3
+        - build
+        - include
+        - src
+
 - <what is build system>
     - https://www.youtube.com/watch?v=_BWU5mWqVA4
     - a set of tools and processses that can track how you want to compile and link your code

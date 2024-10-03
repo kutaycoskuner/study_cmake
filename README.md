@@ -51,7 +51,7 @@ To install and set up the repository locally, follow these steps:
 
 ## Run
 1. Open solution (.sln) file in build  
-    `:root:/build`
+    `:root:`
     ```
-    ./tutorial.sln
+    ./build/tutorial.sln
     ```

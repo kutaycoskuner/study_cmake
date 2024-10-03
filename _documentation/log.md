@@ -45,7 +45,13 @@
 # Log 
 - [todo]
     - add library to cmake
-    - headerlar klasorler icerisinde ise onlar icin ayri set
+    - add dynamic library
+    - add api opengl
+    - when headers had folders and sets within had to make cmake descriptions
+
+
+- [0.16] add static library
+    - 03-Oct-2024 add basic static library
 
 - [0.15] add includes, multiple source files, readme update
     - 03-Oct-2024 add readme install

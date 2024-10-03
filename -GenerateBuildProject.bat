@@ -86,7 +86,11 @@ if !errorlevel! EQU 0 (
 call ../-GenerateBinaries.bat !SOLUTION_DIRECTORY!
 if !errorlevel! EQU 0 (
     echo.
-    echo binaries successfully built
+    echo Solution file and binaries are ready. You can try to start solution:
+    echo ./build/tutorial.sln
+    echo. 
+    echo or directly call the executable:
+    echo ./bin/Windows/x64/Release/tutorial.exe
 ) else (
     echo.
     echo encountered problem on building binaries
