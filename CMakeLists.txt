@@ -65,6 +65,8 @@ add_library( # MODULE, STATIC, SHARED (DYNAMIC)
     "libs/header_hello_1.0.0/hello.cpp"
 )
 
+# submodules
+add_subdirectory("${CMAKE_SOURCE_DIR}/libs/assimp") 
 
 # ----------------------------------------------------------------------------------------
 #               Include Directories and Executable
@@ -76,8 +78,10 @@ include_directories("${CMAKE_SOURCE_DIR}/headers")
 add_executable(${PROJECT_NAME} ${sourceCode})
 
 
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/libs/assimp/include)
 # ----------------------------------------------------------------------------------------
 #               Linking Libraries
 # ----------------------------------------------------------------------------------------
 # linking library should come after generation of executable?
+target_link_libraries(${PROJECT_NAME} PRIVATE assimp)
 target_link_libraries(${PROJECT_NAME} PRIVATE hello)

@@ -48,7 +48,14 @@
     - add dynamic library
     - add api opengl
     - when headers had folders and sets within had to make cmake descriptions
+    - submodule rename file
+    - adding data .obj, .jpeg, .png
 
+- [0.17] cmake adding submodule
+    - 05-Oct-2024 (problem) .exe functioning .sln does not on data import.
+    - 05-Oct-2024 added test .stl
+    - 05-Oct-2024 build submodule library with cmake (assimp)
+    - 05-Oct-2024 add submodule
 
 - [0.16] add static library
     - 03-Oct-2024 add basic static library

@@ -24,6 +24,17 @@ root/
     └── my_functions.h
 
 # Blackboard
+- <github submodule>
+    - gith submodule add <liknk>
+        - warning: in the working copy of '.gitmodules', LF will be replaced by CRLF the next time Git touches it
+    - to add submodules with your git pull
+        - git config submodule.recurse true
+        - git submodule update --init
+    - updating submodule
+    - how to change submodule folder name
+        - rename folder ren old new
+        - go to .gitmodules change name and path
+
 - <libraries>
     - static 
     - dynamic (shared)

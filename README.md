@@ -2,7 +2,9 @@
     CMake Study Repository
 </h1>
 
-This repository is dedicated to studying and experimenting with CMake, a powerful cross-platform build system generator.
+<p align="center">
+This repository is dedicated to studying and experimenting with CMake, a cross-platform build system generator.
+</p>
 
 <p align="center">
     <img alt="GCC Compiler" src="https://img.shields.io/badge/GCC-6.3.0-blue?logo=gcc&logoColor=white" />
@@ -11,6 +13,11 @@ This repository is dedicated to studying and experimenting with CMake, a powerfu
     <img alt="Last Update" src="https://img.shields.io/github/last-commit/kutaycoskuner/study_cmake" />
 </p>
 
+<p align="center">
+    <img src="https://kutaycoskuner.github.io/nuxt_content/dichotomies/player_sheet.png" />
+    <br>
+    <sub style="display:none"><i>test</i></sub>
+</p>
 
 # Installation and Running
 ## Prerequisites
@@ -28,7 +35,10 @@ To install and set up the repository locally, follow these steps:
 1. **Clone the repository**: Open your terminal or Git Bash, and run:
    ```bash
    git clone https://github.com/kutaycoskuner/study_cmake.git
+   ```
+   ```bash
    cd study_cmake
+   ```
 
 ### Automated generation through .bat script
 2. Activate `-GenerateBuildProject.bat`  
@@ -37,14 +47,18 @@ To install and set up the repository locally, follow these steps:
     ./-GenerateBuildProject.bat
     ```
 
-### (Alternative) Manual build with cmake
-2. **Create and Navigate to Build Directory**
+### (Alternative) Manual build with cmake  
+2. **Create and Navigate to Build Directory**  
+    `:root:`
     ```bash
     mkdir build
+    ```
+    ```bash
     cd build
     ```
 
-3. **When in build directory Run cmake to refer root folder**
+3. **When in build directory Run cmake to refer root folder**  
+    `:root:/build`
     ```bash
     cmake ..
     ```
