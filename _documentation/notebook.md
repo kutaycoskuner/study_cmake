@@ -24,13 +24,24 @@ root/
     └── my_functions.h
 
 # Blackboard
+- <post build script>
+    - datayi .exe nin yanina tasi
+
+- <develpment ve packaging baska ortamlar oldugu icin veriye erisim ulasamayabiliyor>
+    - 
+
 - <github submodule>
     - gith submodule add <liknk>
-        - warning: in the working copy of '.gitmodules', LF will be replaced by CRLF the next time Git touches it
+        - git submodule add https://github.com/glfw/glfw.git
+        - warning: in the working copy of '.gitmodules', LF will be replaced by CRLF the next time Git 
+        - readonly yapiyor git init
+        touches it
     - to add submodules with your git pull
         - git config submodule.recurse true
         - git submodule update --init
     - updating submodule
+        - baska branch e checkout yapip commitliyorsun.
+        - root commit e donup update ediyorsun.
     - how to change submodule folder name
         - rename folder ren old new
         - go to .gitmodules change name and path

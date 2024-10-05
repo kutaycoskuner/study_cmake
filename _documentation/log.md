@@ -46,10 +46,17 @@
 - [todo]
     - add library to cmake
     - add dynamic library
-    - add api opengl
+    - submodule update
+    - options / exclude assimp unused modules
     - when headers had folders and sets within had to make cmake descriptions
     - submodule rename file
-    - adding data .obj, .jpeg, .png
+    - compile time optimization?
+
+- [0.18] add opengl package and test 
+    - 06-Oct-2024 add multiprocessor compile activation
+    - 06-Oct-2024 add glfw as sub module
+    - 06-Oct-2024 add opengl
+    - 05-Oct-2024 fix data full path entry for the program
 
 - [0.17] cmake adding submodule
     - 05-Oct-2024 (problem) .exe functioning .sln does not on data import.

@@ -16,7 +16,7 @@ This repository is dedicated to studying and experimenting with CMake, a cross-p
 <p align="center">
     <img src="https://kutaycoskuner.github.io/nuxt_content/dichotomies/player_sheet.png" />
     <br>
-    <sub style="display:none"><i>test</i></sub>
+    <sub><i></i></sub>
 </p>
 
 # Installation and Running
@@ -41,10 +41,10 @@ To install and set up the repository locally, follow these steps:
    ```
 
 ### Automated generation through .bat script
-2. Activate `-GenerateBuildProject.bat`  
+2. Activate `_GenerateBuildProject.bat`  
     `:root:`
     ```bash
-    ./-GenerateBuildProject.bat
+    ./_GenerateBuildProject.bat
     ```
 
 ### (Alternative) Manual build with cmake  

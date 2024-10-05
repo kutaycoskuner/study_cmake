@@ -4,6 +4,12 @@ Remove-Item -Path "C:\Users\kutay\OneDrive\Documents\GitHub\study_cmake\bin" -Re
 Remove-Item -Path "C:\Users\kutay\OneDrive\Documents\GitHub\study_cmake\build" -Recurse -Force
     - removing build directory
 
+./_GenerateBuildProject.bat
+    - run genrate build project script
+
+./_GenerateBinaries.bat
+    - run generate binaries
+
 ./build/tutorial.sln
     - run solution
 

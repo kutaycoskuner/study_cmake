@@ -83,7 +83,7 @@ if !errorlevel! EQU 0 (
 :: ---------------------------------------------------------------------------------------
 ::              generate binaries
 :: ---------------------------------------------------------------------------------------
-call ../-GenerateBinaries.bat !SOLUTION_DIRECTORY!
+call ../_GenerateBinaries.bat !SOLUTION_DIRECTORY!
 if !errorlevel! EQU 0 (
     echo.
     echo Solution file and binaries are ready. You can try to start solution:
